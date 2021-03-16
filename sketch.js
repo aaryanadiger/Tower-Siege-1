@@ -55,11 +55,11 @@ function setup(){
     polygon = Bodies.circle(50,200,20);
     World.add(world,polygon);
 
-    slingshot = new Slingshot(polygon.body,{x:100, y:200});
+    slingshot = new Slingshot(polygon,{x:200, y:200});
 }
     
 function draw(){
-    background(255);
+    background(0);
     Engine.update(engine);
 
     ground.display();
@@ -92,12 +92,12 @@ function draw(){
     imageMode(CENTER);
     image(polygonImg,polygon.position.x,polygon.position.y,40,40);
 
-    drawsprites();
+    //drawsprites();
 
 }
 
 function mouseDragged(){
-    Matter.Body.setPosition(polygon.body, {x: mouseX , y: mouseY});
+    Matter.Body.setPosition(polygon,{x: mouseX , y: mouseY});
 }
 
 
